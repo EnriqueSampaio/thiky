@@ -93,6 +93,8 @@ declare module "thinky" {
       port: number;
       db?: string;
       authKey?: string;
+      user?: string;
+      password?:string;
     }
 
     export interface Connection {
