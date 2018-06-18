@@ -1,0 +1,8 @@
+{
+  "name": "thinky",
+  "main": "lib/thinky.d.ts",
+  "dependencies": {
+    "bluebird": "registry:dt/bluebird#2.0.0+20160319051630",
+    "rethinkdbdash": "github:EnriqueSampaio/typings-rethinkdbdash"
+  }
+}
