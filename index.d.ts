@@ -11,10 +11,10 @@ declare module "thinky" {
       define(key: string, fn: Function): void;
       defineStatic(key: string, fn: Function): void;
       ensureIndex(name: string, fn?: ExpressionFunction<UDocument>, options?: IndexOptions): void;
-      hasOne<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options: RelationshipOptions);
-      belongsTo<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options: RelationshipOptions);
-      hasMany<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options: RelationshipOptions);
-      hasAndBelongsToMany<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options: RelationshipOptions);
+      hasOne<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options?: RelationshipOptions);
+      belongsTo<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options?: RelationshipOptions);
+      hasMany<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options?: RelationshipOptions);
+      hasAndBelongsToMany<SecondUModel extends Model<any, any, any>>(OtherModel: SecondUModel, fieldName: string, leftKey: string, rightKey: string, options?: RelationshipOptions);
       pre(event: string, hook: HookFunction);
       post(event: string, hook: HookFunction);
       save(object: UAttributes, options?: SaveOptions): bluebird.Thenable<UDocument>;
