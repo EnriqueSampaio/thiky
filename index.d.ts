@@ -62,8 +62,8 @@ declare module "thinky" {
       db(name: string): Db;
       table<UDocument extends connect.Document<any, any, any>, UAttributes>(name: string, options?: { useOutdated: boolean }): Table<UDocument>;
 
-      asc(property: string): Sort;
-      desc(property: string): Sort;
+      asc(property: string | Expression<any>): Sort;
+      desc(property: string | Expression<any>): Sort;
 
       sum(prop: string): Aggregator;
       avg(prop: string): Aggregator;
