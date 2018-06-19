@@ -27,14 +27,14 @@ declare module "thinky" {
       validate(): bluebird.Thenable<any>;
       validateAll(options?: ValidateAllOptions, modelToValidate?: Model<any, any, any>): bluebird.Thenable<any>;
       save(callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
-      saveAll(modelToSave: Model<any, any, any>, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
-      saveAll(modelToSave: { (fieldName: string): boolean }, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
+      saveAll(modelToSave?: Model<any, any, any>, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
+      saveAll(modelToSave?: { (fieldName: string): boolean }, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
       isSaved(): boolean;
       getOldValue(): UDocument;
       setSaved(): void;
       delete(callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
-      deleteAll(modelToDelete: Model<any, any, any>, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
-      deleteAll(modelToDelete: { (fieldName: string): boolean }, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
+      deleteAll(modelToDelete?: Model<any, any, any>, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
+      deleteAll(modelToDelete?: { (fieldName: string): boolean }, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
       addRelation<OtherUDocument extends Document<any, any, any>, ResultDocument extends Document<any, any, any>>(field: string, joinedDocument: OtherUDocument): bluebird.Thenable<ResultDocument>;//TODO: improve
       removeRelation<OtherUDocument extends Document<any, any, any>>(field: string, joinedDocument?: OtherUDocument): bluebird.Thenable<UDocument>;
       purge(callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
