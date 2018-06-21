@@ -35,7 +35,7 @@ declare module "thinky" {
       delete(callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
       deleteAll(modelToDelete?: Model<any, any, any>, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
       deleteAll(modelToDelete?: { (fieldName: string): boolean }, callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
-      addRelation<OtherUDocument extends Document<any, any, any>, ResultDocument extends Document<any, any, any>>(field: string, joinedDocument: OtherUDocument): bluebird.Thenable<ResultDocument>;//TODO: improve
+      addRelation<OtherUDocument extends Document<any, any, any>, ResultDocument extends Document<any, any, any>>(field: string, joinedDocument: OtherUDocument): bluebird.Thenable<ResultDocument> | bluebird.Thenable<boolean>;//TODO: improve
       removeRelation<OtherUDocument extends Document<any, any, any>>(field: string, joinedDocument?: OtherUDocument): bluebird.Thenable<UDocument>;
       purge(callback?: (err: Error, doc: UDocument) => void): bluebird.Thenable<UDocument>;
       //getFeed() : Feed; TODO: create
