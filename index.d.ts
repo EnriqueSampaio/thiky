@@ -22,7 +22,7 @@ declare module "thinky" {
 
     export interface Document<UDocument extends Document<any, any, any>, UModel extends Model<any, any, any>, UAttributes> {
       getModel(): UModel;
-      merge<OtherUDocument extends Document<any, any, any>>(doc: OtherUDocument): void;
+      merge<OtherUDocument extends Document<any, any, any>>(doc: OtherUDocument): UDocument;
       validate(): Error;
       validate(): bluebird.Thenable<any>;
       validateAll(options?: ValidateAllOptions, modelToValidate?: Model<any, any, any>): bluebird.Thenable<any>;
