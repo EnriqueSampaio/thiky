@@ -156,7 +156,7 @@ declare module "thinky" {
       zip(): ItemSequence<UDocument>;
 
       //thinky join
-      getJoin<JoinedUDocument extends connect.Document<any, any, any>>(modelToGet: connect.Model<any, any, any>): ItemSequence<JoinedUDocument>;
+      getJoin<JoinedUDocument extends connect.Document<any, any, any>>(modelToGet?: { [key: string]: boolean }): ItemSequence<JoinedUDocument>;
 
       // Transform
       map(transform: ExpressionFunction<any>): ItemSequence<UDocument>;
